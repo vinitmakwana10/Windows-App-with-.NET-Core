@@ -17,7 +17,6 @@ namespace TextEditor
         {
             InitializeComponent();
         }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -25,7 +24,6 @@ namespace TextEditor
             Form1 f1 = new Form1();
             f1.ShowDialog();
         }
-
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -43,11 +41,9 @@ namespace TextEditor
         }
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-
         }
         public string UserName { get; set; }
         public string UserType { get; set; }
@@ -68,7 +64,6 @@ namespace TextEditor
         {
             using (var stream = File.Create("Untitled.txt"))
             {
-
             }
             StreamReader sr = new StreamReader("Untitled.txt");
             richTextBox1.Rtf = sr.ReadToEnd();
@@ -130,14 +125,12 @@ namespace TextEditor
         {
             using (var stream = File.Create("Untitled.txt"))
             {
-
             }
             StreamReader sr = new StreamReader("Untitled.txt");
             richTextBox1.Rtf = sr.ReadToEnd();
             sr.Close();
             CurrentFile = "Untitled.txt";
         }
-
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (CurrentFile == "Untitled.txt")
