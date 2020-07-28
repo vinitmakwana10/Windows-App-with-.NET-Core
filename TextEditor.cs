@@ -16,7 +16,6 @@ namespace TextEditor
         public TextEditor()
         {
             InitializeComponent();
-
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -25,7 +24,6 @@ namespace TextEditor
             MessageBox.Show("User Logged Out", "Logged Out!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Form1 f1 = new Form1();
             f1.ShowDialog();
-
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -43,20 +41,16 @@ namespace TextEditor
                 CurrentFile = open.FileName;
             }
         }
-
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
 
         }
-
         public string UserName { get; set; }
         public string UserType { get; set; }
-
         private void TextEditor_Load(object sender, EventArgs e)
         {
             UserNameLabel.Text = "UserName: " + UserName;
@@ -70,7 +64,6 @@ namespace TextEditor
                 richTextBox1.ReadOnly = false;
             }
         }
-
         private void newToolStripButton_Click(object sender, EventArgs e)
         {
             using (var stream = File.Create("Untitled.txt"))
@@ -82,7 +75,6 @@ namespace TextEditor
             sr.Close();
             CurrentFile = "Untitled.txt"; richTextBox1.Clear();
         }
-
         private void openToolStripButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -99,7 +91,6 @@ namespace TextEditor
             }
         }
         public string CurrentFile { get; set; }
-
         private void saveToolStripButton_Click(object sender, EventArgs e)
         {
             if (CurrentFile == "Untitled.txt")
@@ -122,9 +113,7 @@ namespace TextEditor
                 sw.Close();
                 MessageBox.Show("File Saved", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
-
         private void printToolStripButton_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFile = new SaveFileDialog();
@@ -137,7 +126,6 @@ namespace TextEditor
                 sw.Close();
             }
         }
-
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (var stream = File.Create("Untitled.txt"))
@@ -148,7 +136,6 @@ namespace TextEditor
             richTextBox1.Rtf = sr.ReadToEnd();
             sr.Close();
             CurrentFile = "Untitled.txt";
-
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -173,7 +160,6 @@ namespace TextEditor
             }
             MessageBox.Show("File Saved", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFile = new SaveFileDialog();
@@ -186,60 +172,48 @@ namespace TextEditor
                 sw.Close();
             }
         }
-
         private void cutToolStripButton1_Click(object sender, EventArgs e)
         {
             richTextBox1.Cut();
         }
-
         private void copyToolStripButton1_Click(object sender, EventArgs e)
         {
             richTextBox1.Copy();
         }
-
         private void pasteToolStripButton1_Click(object sender, EventArgs e)
         {
             richTextBox1.Paste();
         }
-
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.Cut();
         }
-
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.Copy();
         }
-
         private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.Paste();
         }
-
         private void cutToolStripButton_Click(object sender, EventArgs e)
         {
             richTextBox1.SelectionFont = new Font(this.Font, FontStyle.Bold);
         }
-
         private void copyToolStripButton_Click(object sender, EventArgs e)
         {
             richTextBox1.SelectionFont = new Font(this.Font, FontStyle.Italic);
         }
-
         private void pasteToolStripButton_Click(object sender, EventArgs e)
         {
             richTextBox1.SelectionFont = new Font(this.Font, FontStyle.Underline);
         }
-
         private void toolStripComboBox1_Click(object sender, EventArgs e)
         {
-
             string FontSize = this.toolStripComboBox1.Text;
             float FontSize1 = float.Parse(FontSize);
             richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.FontFamily.Name, FontSize1, FontStyle.Regular);
         }
-
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             About a1 = new About();
